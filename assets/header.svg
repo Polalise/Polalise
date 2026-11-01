@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="title description">
+  <title id="title">Polalise · 데이터에서 모델로, 모델에서 서비스로.</title>
+  <desc id="description">머신러닝, 딥러닝, LLM과 RAG를 중심으로 모델을 서비스에 연결하는 개발자 포트폴리오</desc>
+  <rect width="1200" height="340" rx="12" fill="#0d1117"/>
+  <rect x="1" y="1" width="1198" height="338" rx="11" fill="none" stroke="#30363d"/>
+  <rect x="48" y="46" width="36" height="3" fill="#57d7bd"/>
+  <g font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif">
+    <text x="102" y="54" fill="#57d7bd" font-family="Consolas,monospace" font-size="18" letter-spacing="3">POLALISE / AI &amp; SOFTWARE</text>
+    <text x="48" y="144" fill="#e6edf3" font-weight="700" font-size="58" letter-spacing="-2">데이터에서 모델로,</text>
+    <text x="48" y="216" fill="#e6edf3" font-weight="700" font-size="58" letter-spacing="-2">모델에서 서비스로.</text>
+    <text x="51" y="286" fill="#9da7b3" font-size="22" font-family="Consolas,monospace">ML · DEEP LEARNING · LLM / RAG</text>
+    <text x="1148" y="285" text-anchor="end" fill="#57d7bd" font-family="Consolas,monospace" font-size="18">polalise.github.io ↗</text>
+  </g>
+</svg>
