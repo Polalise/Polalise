@@ -6,7 +6,7 @@ The published README uses six separately linked image panels. Each panel has a d
 
 ## Rendering
 
-Serve the repository root with a local static HTTP server and open `design/profile.html` in Chromium. Wait for `document.fonts.ready` and all images to load. Capture each `[data-asset]` element independently, preserving the white background and padding. Desktop exports use a 971 CSS-pixel viewport; mobile exports use 344 CSS pixels. Both use a device scale factor of 2.
+Serve the repository root with a local static HTTP server and open `design/profile.html` in Chromium. Wait for `document.fonts.ready` and all images to load. Capture each `[data-asset]` element independently, preserving the white background and padding. Desktop exports use a 971 CSS-pixel viewport; mobile exports use 344 CSS pixels. Both use a device scale factor of 2. The artwork source suppresses browser scrollbars so element captures contain only the designed panel.
 
 Panel order: `hero`, `economics`, `sleep`, `oil`, `plushome`, `footer`.
 
