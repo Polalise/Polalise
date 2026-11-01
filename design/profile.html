@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Polalise · Profile design source</title>
+  <style>
+    @font-face { font-family: Pretendard; src: url('./fonts/PretendardVariable.woff2') format('woff2'); font-weight: 100 900; font-display: block; }
+    @font-face { font-family: 'IBM Plex Mono'; src: url('./fonts/IBMPlexMono.woff2') format('woff2'); font-weight: 400; font-display: block; }
+    :root { --blue: #1263e8; --ink: #111318; --muted: #5f6470; --line: #e4e7ec; --pale: #eef5ff; }
+    * { box-sizing: border-box; }
+    html { background: white; color: var(--ink); font-family: Pretendard, sans-serif; }
+    body { margin: 0; }
+    .sheet { width: 971px; margin: 0 auto; background: #fff; }
+    .panel { width: 100%; background: #fff; overflow: hidden; }
+    .hero { height: 442px; padding: 16px 53px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; font-size: 18px; font-weight: 750; letter-spacing: .3px; }
+    .brand-mark { display: grid; place-items: center; width: 35px; height: 35px; border-radius: 50%; color: white; background: var(--blue); font-size: 21px; font-weight: 750; }
+    .focus { margin: 32px 0 9px; font: 12px/1.5 'IBM Plex Mono', monospace; letter-spacing: 1.5px; color: var(--blue); }
+    h1 { margin: 0; font-size: 54px; line-height: 1.02; letter-spacing: -2.4px; font-weight: 830; }
+    .dot { color: var(--blue); }
+    .intro { margin: 16px 0 16px; font-size: 19px; line-height: 1.5; color: var(--muted); letter-spacing: -.25px; }
+    .cta-row { display: flex; align-items: center; gap: 22px; }
+    a { color: var(--blue); text-decoration: none; }
+    .button { display: inline-flex; align-items: center; gap: 14px; padding: 13px 22px; border-radius: 4px; background: var(--blue); color: white; font-weight: 700; font-size: 17px; }
+    .website { font-size: 18px; font-weight: 650; }
+    .section-label { margin: 34px 0 8px; color: var(--blue); font: 12px/1.5 'IBM Plex Mono', monospace; letter-spacing: 1.2px; }
+    h2 { margin: 0; font-size: 35px; line-height: 1.2; letter-spacing: -1.4px; font-weight: 800; }
+    .card-panel { padding: 0 36px 12px; }
+    .card { display: grid; grid-template-columns: 328px minmax(0, 1fr); gap: 13px; min-height: 296px; border: 1px solid var(--line); border-radius: 11px; padding: 10px 11px 10px 23px; box-shadow: 0 1px 5px #0f172a09; overflow: hidden; background: #fff; }
+    .copy { display: flex; flex-direction: column; align-items: flex-start; padding: 13px 0 14px; min-width: 0; }
+    .category { margin: 0 0 5px; color: var(--blue); font: 12px/1.5 'IBM Plex Mono', monospace; letter-spacing: .3px; }
+    h3 { margin: 0; font-size: 30px; line-height: 1.2; font-weight: 790; letter-spacing: -1px; }
+    .repo { display: flex; align-items: center; gap: 8px; margin-top: 5px; font-size: 15px; line-height: 1.4; color: var(--muted); }
+    .repo img { width: 16px; height: 16px; opacity: .9; }
+    .description { margin: 15px 0 15px; font-size: 18px; line-height: 1.42; letter-spacing: -.35px; font-weight: 450; color: var(--muted); }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chips span { border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; color: var(--muted); font-size: 13px; line-height: 1.2; white-space: nowrap; }
+    .card-link { margin-top: auto; padding-top: 20px; font-size: 18px; line-height: 1.3; font-weight: 700; letter-spacing: -.2px; }
+    .arrow { margin-left: 9px; }
+    .screen { display: block; height: 275px; width: 100%; overflow: hidden; border-radius: 7px; background: #f5f9ff; border: 1px solid #edf0f5; }
+    .screen img { display: block; width: 100%; height: auto; }
+    .sleep .card { min-height: 288px; }
+    .sleep .screen { height: 267px; }
+    .sleep h3 { font-size: 29px; }
+    .oil .card { min-height: 272px; }
+    .oil .screen { height: 251px; }
+    .oil h3 { font-size: 31px; }
+    .oil .description { margin-top: 14px; }
+    .oil .copy { padding-top: 8px; padding-bottom: 4px; }
+    .oil .card-link { padding-top: 14px; }
+    .plushome .card { min-height: 234px; }
+    .plushome .screen { height: 213px; }
+    .plushome .description { margin-top: 13px; margin-bottom: 11px; }
+    .plushome .copy { padding-top: 7px; padding-bottom: 2px; }
+    .plushome .card-link { padding-top: 17px; }
+    .footer { height: 42px; padding: 2px 36px 0; }
+    .footer-inner { border-top: 1px solid #d9deea; text-align: center; padding-top: 9px; font-size: 12px; line-height: 1.5; color: var(--muted); }
+    .footer a { font-weight: 700; margin-left: 12px; }
+    @media (max-width: 640px) {
+      .sheet { width: min(390px, 100vw); }
+      .hero { height: auto; padding: 22px 22px 27px; }
+      .brand { font-size: 17px; }
+      .brand-mark { width: 31px; height: 31px; font-size: 19px; }
+      .focus { margin-top: 30px; font-size: 10px; letter-spacing: .7px; }
+      h1 { font-size: clamp(32px, 9.75vw, 38px); line-height: 1.12; letter-spacing: -1.8px; }
+      .intro { margin: 18px 0 19px; font-size: 17px; line-height: 1.55; word-break: keep-all; }
+      .cta-row { gap: 15px; align-items: flex-start; flex-direction: column; }
+      .button { padding: 12px 18px; font-size: 16px; }
+      .website { font-size: 15px; }
+      .section-label { margin-top: 34px; font-size: 10px; }
+      h2 { font-size: 27px; letter-spacing: -1.2px; }
+      .card-panel { padding: 0 12px 14px; }
+      .card { display: flex; flex-direction: column; gap: 18px; min-height: 0 !important; padding: 20px 20px 12px; border-radius: 11px; }
+      .copy { padding: 0 !important; }
+      .category { font-size: 11px; letter-spacing: 0; margin-bottom: 9px; }
+      h3, .sleep h3, .oil h3 { font-size: 27px; letter-spacing: -1.1px; }
+      .repo { font-size: 14px; }
+      .description { font-size: 17px; margin-top: 16px !important; margin-bottom: 15px !important; }
+      .description br { display: none; }
+      .chips { gap: 5px; }
+      .chips span { font-size: 11px; padding: 6px 9px; }
+      .card-link { font-size: 17px; padding-top: 20px !important; }
+      .screen, .sleep .screen, .oil .screen, .plushome .screen { height: 170px; }
+      .footer { height: auto; padding: 2px 17px 17px; }
+      .footer-inner { font-size: 12px; padding: 15px 10px 0; }
+      .footer a { display: block; margin: 7px 0 0; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <header class="panel hero" data-asset="hero">
+      <div class="brand"><span class="brand-mark">P</span><span>POLALISE</span></div>
+      <p class="focus">ML · DEEP LEARNING · LLM / RAG</p>
+      <h1>모델을 검증하고,<br>서비스로 연결합니다<span class="dot">.</span></h1>
+      <p class="intro">데이터 분석과 모델 실험을 실제 서비스로 연결하는 유병현입니다.</p>
+      <div class="cta-row"><a class="button" href="https://polalise.github.io/">포트폴리오 보기 <span>↗</span></a><a class="website" href="https://polalise.github.io/">↗&nbsp; polalise.github.io</a></div>
+      <p class="section-label">SELECTED AI PROJECTS</p>
+      <h2>실험과 검증, 그리고 서비스<span class="dot">.</span></h2>
+    </header>
+
+    <section class="panel card-panel economics" data-asset="economics">
+      <article class="card">
+        <div class="copy">
+          <p class="category">LLM / RAG / MACHINE LEARNING</p>
+          <h3>ML 경제 질의응답</h3>
+          <div class="repo"><img src="github.svg" alt="">ML_economics_answers</div>
+          <p class="description">경제 질문을 데이터 조회, ML 예측, <br>RAG 근거 검색으로 연결합니다.</p>
+          <div class="chips"><span>Python</span><span>Streamlit</span><span>pgvector</span><span>Docker</span></div>
+          <a class="card-link" href="https://polalise.github.io/projects/ml-economics-answers/">설계와 실험 과정 보기 <span class="arrow">→</span></a>
+        </div>
+        <div class="screen"><img src="screens/ml-economics-answers.webp" alt="경제 질의응답 Streamlit 실행 화면"></div>
+      </article>
+    </section>
+
+    <section class="panel card-panel sleep" data-asset="sleep">
+      <article class="card">
+        <div class="copy">
+          <p class="category">DEEP LEARNING</p>
+          <h3>취침 전 수면 품질 예측</h3>
+          <div class="repo"><img src="github.svg" alt="">DeepLearnin_sleep</div>
+          <p class="description">예측 시점의 정보 누수를 통제하고 <br>참가자 단위로 일반화 성능을 평가합니다.</p>
+          <div class="chips"><span>PyTorch</span><span>MLP</span><span>Wearable Data</span></div>
+          <a class="card-link" href="https://polalise.github.io/projects/deep-learning-sleep/">모델과 검증 과정 보기 <span class="arrow">→</span></a>
+        </div>
+        <div class="screen"><img src="screens/deep-learning-sleep.webp" alt="취침 전 수면 예측 Streamlit 실행 화면"></div>
+      </article>
+    </section>
+
+    <section class="panel card-panel oil" data-asset="oil">
+      <article class="card">
+        <div class="copy">
+          <p class="category">MACHINE LEARNING</p>
+          <h3>유가·환율 기반 물가 예측</h3>
+          <div class="repo"><img src="github.svg" alt="">MachineLearning_oil</div>
+          <p class="description">경제지표의 시차를 반영해 다음 달 <br>물가를 예측하고 시나리오를 비교합니다.</p>
+          <div class="chips"><span>pandas</span><span>scikit-learn</span><span>XGBoost</span></div>
+          <a class="card-link" href="https://polalise.github.io/projects/machine-learning-oil/">분석과 모델 비교 보기 <span class="arrow">→</span></a>
+        </div>
+        <div class="screen"><img src="screens/machine-learning-oil.webp" alt="유가와 환율 기반 물가 예측 대시보드"></div>
+      </article>
+    </section>
+
+    <section class="panel card-panel plushome" data-asset="plushome">
+      <article class="card">
+        <div class="copy">
+          <p class="category">TEAM PROJECT / FULL STACK</p>
+          <h3>PlusHome</h3>
+          <p class="description">사업자 대시보드 · 통계 API와 SQL <br>이미지 업로드 · 공통 UI 컴포넌트</p>
+          <div class="chips"><span>React</span><span>Spring Boot</span><span>MyBatis</span><span>Oracle</span></div>
+          <a class="card-link" href="https://polalise.github.io/projects/plushome/">담당 기능과 구현 과정 보기 <span class="arrow">→</span></a>
+        </div>
+        <div class="screen"><img src="screens/plushome.webp" alt="PlusHome에서 담당한 기업 회원 대시보드"></div>
+      </article>
+    </section>
+
+    <footer class="panel footer" data-asset="footer"><div class="footer-inner">더 자세한 프로젝트 이야기는 포트폴리오에서.<a href="https://polalise.github.io/">polalise.github.io ↗</a></div></footer>
+  </main>
+</body>
+</html>
